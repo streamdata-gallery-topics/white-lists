@@ -31,7 +31,7 @@ apis:
   tags: White Lists
   properties:
   - type: x-openapi-spec
-    url: https://raw.githubusercontent.com/streamdata-gallery/white-lists/master/_listings/disqus/whitelists-list-json-get.md
+    url: https://raw.githubusercontent.com/streamdata-gallery/white-lists/master/_listings/disqus/whitelists-remove-json-post.md
 x-common:
 - type: x-base
   url: https://disqus.com/api/
