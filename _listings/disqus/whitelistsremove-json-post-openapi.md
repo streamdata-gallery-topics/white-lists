@@ -1,8 +1,10 @@
 ---
 swagger: "2.0"
+x-collection-name: Disqus
+x-complete: 0
 info:
-  title: Disqus Whitelists List
-  description: Whitelists List
+  title: Disqus Whitelists Remove
+  description: Whitelists Remove
   termsOfService: https://docs.disqus.com/kb/terms-and-policies/
   version: 1.0.0
 host: disqus.com
@@ -17,8 +19,9 @@ paths:
   /whitelists/list.json:
     get:
       summary: Whitelists List
-      description: "\n     Whitelists List "
+      description: Whitelists List
       operationId: whitelists-list
+      x-api-path-slug: whitelistslist-json-get
       parameters:
       - in: query
         name: cursor
@@ -62,10 +65,35 @@ paths:
         200:
           description: OK
       tags:
-      - comments
-      - white lists
-definitions: []
-x-collection-name: Disqus
+      - Comments
+      - White Lists
+  /whitelists/remove.json:
+    post:
+      summary: Whitelists Remove
+      description: Whitelists Remove
+      operationId: whitelists-remove
+      x-api-path-slug: whitelistsremove-json-post
+      parameters:
+      - in: query
+        name: email
+        description: Defaults to []                         Email address (defined
+          by RFC 5322)
+        type: string
+      - in: query
+        name: forum
+        description: Looks up a forum by ID (aka short name)
+        type: string
+      - in: query
+        name: user
+        description: Defaults to []                         Looks up a user by ID
+          You may look up a user by username using the &#39;username&#39; query type
+        type: string
+      responses:
+        200:
+          description: OK
+      tags:
+      - Comments
+      - White Lists
 x-streamrank:
   polling_total_time_average: 0
   polling_size_download_average: 0

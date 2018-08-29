@@ -1,5 +1,7 @@
 ---
 swagger: "2.0"
+x-collection-name: Disqus
+x-complete: 0
 info:
   title: Disqus Whitelists List
   description: Whitelists List
@@ -17,8 +19,9 @@ paths:
   /whitelists/list.json:
     get:
       summary: Whitelists List
-      description: "\n     Whitelists List "
+      description: Whitelists List
       operationId: whitelists-list
+      x-api-path-slug: whitelistslist-json-get
       parameters:
       - in: query
         name: cursor
@@ -62,10 +65,8 @@ paths:
         200:
           description: OK
       tags:
-      - comments
-      - white lists
-definitions: []
-x-collection-name: Disqus
+      - Comments
+      - White Lists
 x-streamrank:
   polling_total_time_average: 0
   polling_size_download_average: 0
